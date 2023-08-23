@@ -20,18 +20,51 @@
   <title>Amazing Events</title>
 </head>
 
-<body>
-  <figure class="">
-    <img src="./src/assets/amazing_brand.png" alt="Amazing Events brand logo">
-  </figure>
-  
-  <nav class="">
-    <a href="./index.html" aria-current="page">home</a>
-    <a href="./src/pages/upcomingEvents.html">upcoming events</a>
-    <a href="./src/pages/pastEvents.html">past events</a>
-    <a href="./src/pages/contact.html">contact</a>
-    <a href="./src/pages/stats.html">stats</a>
-  </nav>
+<body style="font-family: Oswald;">
+  <header class="p-2">
+    <nav class="navbar navbar-expand-sm">
+      <div class="container-fluid">
+        <div class="row align-items-center justify-content-between">
+          <div class="col-6 col-sm-4">
+            <figure class="navbar-brand m-0 p-0">
+              <img src="./src/assets/amazing_brand.png" alt="Amazing Events brand logo" class="figure-img w-100 m-0 p-0">
+            </figure>
+          </div>
+          <div class="col-6 text-end">
+            <button
+              type="button"
+              class="navbar-toggler"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbar"
+              aria-controls="navbar"
+              aria-expanded="false"
+              aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbar">
+              <ul class="navbar-nav d-flex flex-column flex-sm-row flex-nowrap align-items-center justify-content-between">
+                <li class="nav-item">
+                  <a href="./index.html" aria-current="page" class="nav-link active">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a href="./src/pages/upcomingEvents.html" class="nav-link">Upcoming Events</a>
+                </li>
+                <li class="nav-item">
+                  <a href="./src/pages/pastEvents.html" class="nav-link">Past Events</a>
+                </li>
+                <li class="nav-item">
+                  <a href="./src/pages/contact.html" class="nav-link">Contact</a>
+                </li>
+                <li class="nav-item">
+                  <a href="./src/pages/stats.html" class="nav-link">Stats</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
 
 </body>
 </html>
