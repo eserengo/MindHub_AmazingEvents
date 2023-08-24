@@ -20,7 +20,7 @@
   <title>Contact</title>
 </head>
 
-<body style="font-family: Oswald;">
+<body style="font-family: Oswald; min-width: 200px;">
   <header class="p-2">
     <nav class="navbar navbar-expand-sm">
       <div class="container-fluid">
@@ -30,7 +30,7 @@
               <img src="../assets/amazing_brand.png" alt="Amazing Events brand logo" class="figure-img w-100 m-0 p-0">
             </figure>
           </div>
-          <div class="col-6 col-md-4 text-end">
+          <div class="col-6 text-end">
             <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar"
               aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
@@ -39,19 +39,20 @@
               <ul
                 class="navbar-nav d-flex flex-column flex-sm-row flex-nowrap align-items-center justify-content-between w-100">
                 <li class="nav-item">
-                  <a href="../../index.html" class="nav-link">Home</a>
+                  <a href="../../index.html" class="nav-link fs-5">Home</a>
                 </li>
                 <li class="nav-item">
-                  <a href="./upcomingEvents.html" class="nav-link">Upcoming Events</a>
+                  <a href="./upcomingEvents.html" class="nav-link fs-5">Upcoming Events</a>
                 </li>
                 <li class="nav-item">
-                  <a href="./pastEvents.html" class="nav-link">Past Events</a>
+                  <a href="./pastEvents.html" class="nav-link fs-5">Past Events</a>
                 </li>
                 <li class="nav-item">
-                  <a href="./contact.html" aria-current="page" class="nav-link active">Contact</a>
+                  <a href="./contact.html" aria-current="page" class="nav-link active fs-5"
+                    style="color: rgb(214, 0, 100);">Contact</a>
                 </li>
                 <li class="nav-item">
-                  <a href="./stats.html" class="nav-link">Stats</a>
+                  <a href="./stats.html" class="nav-link fs-5">Stats</a>
                 </li>
               </ul>
             </div>
@@ -63,19 +64,24 @@
     <section id="carousel" class="carousel slide position-relative">
       <div class="carousel-inner">
         <figure class="carousel-item">
-          <img src="../assets/optional_banner_1.jpg" class="d-block w-100" alt="An image of a sushi dish">
+          <img src="../assets/optional_banner_1.jpg" class="d-block w-100 object-fit-cover"
+            alt="An image of a sushi dish" style="max-height: 320px;">
         </figure>
         <figure class="carousel-item">
-          <img src="../assets/optional_banner_2.jpg" class="d-block w-100" alt="An image of a theather">
+          <img src="../assets/optional_banner_2.jpg" class="d-block w-100 object-fit-cover" alt="An image of a theather"
+            style="max-height: 320px;">
         </figure>
         <figure class="carousel-item">
-          <img src="../assets/optional_banner_3.jpg" class="d-block w-100" alt="An image of a cathedral inside">
+          <img src="../assets/optional_banner_3.jpg" class="d-block w-100 object-fit-cover"
+            alt="An image of a cathedral inside" style="max-height: 320px;">
         </figure>
         <figure class="carousel-item active">
-          <img src="../assets/optional_banner_4.jpg" class="d-block w-100" alt="An image of party lights">
+          <img src="../assets/optional_banner_4.jpg" class="d-block w-100 object-fit-cover"
+            alt="An image of party lights" style="max-height: 320px;">
         </figure>
         <figure class="carousel-item">
-          <img src="../assets/optional_banner_5.jpg" class="d-block w-100" alt="An image of a mic">
+          <img src="../assets/optional_banner_5.jpg" class="d-block w-100 object-fit-cover" alt="An image of a mic"
+            style="max-height: 320px;">
         </figure>
       </div>
       <button class="carousel-control-prev" type="button" data-bs-target="#carousel" data-bs-slide="prev">
@@ -86,8 +92,8 @@
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Next</span>
       </button>
-    
-      <h1 class="position-absolute top-50 start-50 translate-middle fs-1 text-white">Contact</h1>
+
+      <h1 class="position-absolute top-50 start-50 translate-middle text-white" style="font-size: 64px;">Contact</h1>
     </section>
   </header>
 
@@ -101,23 +107,26 @@
             <ul class="navbar-nav d-flex flex-row flex-nowrap align-items-center justify-content-between">
               <li class="nav-item">
                 <figure class="m-0 p-0">
-                  <img src="../assets/facebook.png" alt="facebook logo" class="figure-img" role="button">
+                  <img src="../assets/facebook.png" alt="facebook logo" class="figure-img m-0" role="button"
+                    style="max-width: 32px; filter: grayscale(1);">
                 </figure>
               </li>
               <li class="nav-item">
                 <figure class="m-0 p-0">
-                  <img src="../assets/instagram.png" alt="instagram logo" class="figure-img" role="button">
+                  <img src="../assets/instagram.png" alt="instagram logo" class="figure-img m-0" role="button"
+                    style="max-width: 32px; filter: grayscale(1);">
                 </figure>
               </li>
               <li class="nav-item">
                 <figure class="m-0 p-0">
-                  <img src="../assets/whatsapp.png" alt="whatsapp logo" class="figure-img" role="button">
+                  <img src="../assets/whatsapp.png" alt="whatsapp logo" class="figure-img m-0" role="button"
+                    style="max-width: 32px; filter: grayscale(1);">
                 </figure>
               </li>
             </ul>
           </div>
           <div class="col-8 col-sm-4 text-end">
-            <p>AP Desarrollo Web 14 TN</p>
+            <p class="fs-6 m-0">AP Desarrollo Web 14 TN</p>
           </div>
         </div>
       </div>

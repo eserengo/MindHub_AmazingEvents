@@ -20,7 +20,7 @@
   <title>Past Events</title>
 </head>
 
-<body style="font-family: Oswald;">
+<body style="font-family: Oswald; min-width: 200px;">
   <header class="p-2">
     <nav class="navbar navbar-expand-sm">
       <div class="container-fluid">
@@ -30,7 +30,7 @@
               <img src="../assets/amazing_brand.png" alt="Amazing Events brand logo" class="figure-img w-100 m-0 p-0">
             </figure>
           </div>
-          <div class="col-6 col-md-4 text-end">
+          <div class="col-2 col-sm-6 text-end">
             <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar"
               aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
@@ -39,19 +39,20 @@
               <ul
                 class="navbar-nav d-flex flex-column flex-sm-row flex-nowrap align-items-center justify-content-between w-100">
                 <li class="nav-item">
-                  <a href="../../index.html" class="nav-link">Home</a>
+                  <a href="../../index.html" class="nav-link fs-5">Home</a>
                 </li>
                 <li class="nav-item">
-                  <a href="./upcomingEvents.html" class="nav-link">Upcoming Events</a>
+                  <a href="./upcomingEvents.html" class="nav-link fs-5">Upcoming Events</a>
                 </li>
                 <li class="nav-item">
-                  <a href="./pastEvents.html" aria-current="page" class="nav-link active">Past Events</a>
+                  <a href="./pastEvents.html" aria-current="page" class="nav-link active fs-5"
+                    style="color: rgb(214, 0, 100);">Past Events</a>
                 </li>
                 <li class="nav-item">
-                  <a href="./contact.html" class="nav-link">Contact</a>
+                  <a href="./contact.html" class="nav-link fs-5">Contact</a>
                 </li>
                 <li class="nav-item">
-                  <a href="./stats.html" class="nav-link">Stats</a>
+                  <a href="./stats.html" class="nav-link fs-5">Stats</a>
                 </li>
               </ul>
             </div>
@@ -63,19 +64,24 @@
     <section id="carousel" class="carousel slide position-relative">
       <div class="carousel-inner">
         <figure class="carousel-item">
-          <img src="../assets/optional_banner_1.jpg" class="d-block w-100" alt="An image of a sushi dish">
+          <img src="../assets/optional_banner_1.jpg" class="d-block w-100 object-fit-cover"
+            alt="An image of a sushi dish" style="max-height: 320px;">
         </figure>
         <figure class="carousel-item">
-          <img src="../assets/optional_banner_2.jpg" class="d-block w-100" alt="An image of a theather">
+          <img src="../assets/optional_banner_2.jpg" class="d-block w-100 object-fit-cover" alt="An image of a theather"
+            style="max-height: 320px;">
         </figure>
         <figure class="carousel-item active">
-          <img src="../assets/optional_banner_3.jpg" class="d-block w-100" alt="An image of a cathedral inside">
+          <img src="../assets/optional_banner_3.jpg" class="d-block w-100 object-fit-cover"
+            alt="An image of a cathedral inside" style="max-height: 320px;">
         </figure>
         <figure class="carousel-item">
-          <img src="../assets/optional_banner_4.jpg" class="d-block w-100" alt="An image of party lights">
+          <img src="../assets/optional_banner_4.jpg" class="d-block w-100 object-fit-cover"
+            alt="An image of party lights" style="max-height: 320px;">
         </figure>
         <figure class="carousel-item">
-          <img src="../assets/optional_banner_5.jpg" class="d-block w-100" alt="An image of a mic">
+          <img src="../assets/optional_banner_5.jpg" class="d-block w-100 object-fit-cover" alt="An image of a mic"
+            style="max-height: 320px;">
         </figure>
       </div>
       <button class="carousel-control-prev" type="button" data-bs-target="#carousel" data-bs-slide="prev">
@@ -86,12 +92,117 @@
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Next</span>
       </button>
-    
-      <h1 class="position-absolute top-50 start-50 translate-middle fs-1 text-white">Past Events</h1>
+
+      <h1 class="position-absolute top-50 start-50 translate-middle text-white" style="font-size: 64px;">Past Events</h1>
     </section>
   </header>
 
-  <main></main>
+  <main>
+    <nav class="navbar">
+      <div class="container-fluid">
+        <div class="row w-100 d-flex flex-row align-items-center justify-content-between">
+          <div class="col-6 col-sm-8">
+            <form class="d-flex flex-row flex-wrap align-items-center gap-4">
+              <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="category1">
+                <label for="category1" class="form-check-label">Category</label>
+              </div>
+              <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="category2">
+                <label for="category2" class="form-check-label">Category</label>
+              </div>
+              <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="category3">
+                <label for="category3" class="form-check-label">Category</label>
+              </div>
+              <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="category4">
+                <label for="category4" class="form-check-label">Category</label>
+              </div>
+              <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="category5">
+                <label for="category5" class="form-check-label">Category</label>
+              </div>
+            </form>
+          </div>
+          <div class="col-6 col-sm-4">
+            <form class="d-flex" role="search">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-danger" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <section class="p-2">
+      <div class="container-fluid">
+        <div class="row w-100">
+          <div class="col-12 col-sm-6 col-md-3 my-2">
+            <div class="card" style="min-height: 25rem">
+              <img src="../assets/marathon.jpg" class="card-img-top object-fit-cover" alt="An image of people running a race."
+                style="height: 10rem;">
+              <div class="card-body d-flex flex-column align-items-stretch justify-content-evenly">
+                <h2 class="card-title fs-4 text-center">10K for life</h2>
+                <p class="card-text">Come and exercise, improve your health and lifestyle.</p>
+                <div class="d-flex flex-wrap align-items-center justify-content-between gap-2">
+                  <span class="card-text">Price: 3</span>
+                  <a href="#" class="btn btn-outline-danger px-4" style="margin-top: -8px;">Details</a>
+                </div>
+              </div>
+            </div>
+          </div>
+    
+          <div class="col-12 col-sm-6 col-md-3 my-2">
+            <div class="card" style="min-height: 25rem">
+              <img src="../assets/books.jpg" class="card-img-top object-fit-cover" alt="An image of a bookstore."
+                style="height: 10rem;">
+              <div class="card-body d-flex flex-column align-items-stretch justify-content-evenly">
+                <h2 class="card-title fs-4 text-center">School Book Fair</h2>
+                <p class="card-text">Bring your unused school book and take the one you need.</p>
+                <div class="d-flex flex-wrap align-items-center justify-content-between gap-2">
+                  <span class="card-text">Price: 1</span>
+                  <a href="#" class="btn btn-outline-danger px-4" style="margin-top: -8px;">Details</a>
+                </div>
+              </div>
+            </div>
+          </div>
+    
+          <div class="col-12 col-sm-6 col-md-3 my-2">
+            <div class="card" style="min-height: 25rem">
+              <img src="../assets/food_fair.jpg" class="card-img-top object-fit-cover" alt="An image of several dishes served."
+                style="height: 10rem;">
+              <div class="card-body d-flex flex-column align-items-stretch justify-content-evenly">
+                <h2 class="card-title fs-4 text-center">Festival of the collectivities</h2>
+                <p class="card-text">Enjoy your favorite dishes from different countries in a unique event for the whole
+                  family.</p>
+                <div class="d-flex flex-wrap align-items-center justify-content-between gap-2">
+                  <span class="card-text">Price: 5</span>
+                  <a href="#" class="btn btn-outline-danger px-4" style="margin-top: -8px;">Details</a>
+                </div>
+              </div>
+            </div>
+          </div>
+    
+          <div class="col-12 col-sm-6 col-md-3 my-2">
+            <div class="card" style="min-height: 25rem">
+              <img src="../assets/outing_to_the_museum.jpg" class="card-img-top object-fit-cover" alt="An image of a crowded museum."
+                style="height: 10rem;">
+              <div class="card-body d-flex flex-column align-items-stretch justify-content-evenly">
+                <h2 class="card-title fs-4 text-center">Art Exhibition</h2>
+                <p class="card-text">Let's go to the art museum for an incredible tour to learn about the largest
+                  dinosaurs.</p>
+                <div class="d-flex flex-wrap align-items-center justify-content-between gap-2">
+                  <span class="card-text">Price: 15</span>
+                  <a href="#" class="btn btn-outline-danger px-4" style="margin-top: -8px;">Details</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 
   <footer class="p-2">
     <nav class="navbar">
@@ -101,23 +212,26 @@
             <ul class="navbar-nav d-flex flex-row flex-nowrap align-items-center justify-content-between">
               <li class="nav-item">
                 <figure class="m-0 p-0">
-                  <img src="../assets/facebook.png" alt="facebook logo" class="figure-img" role="button">
+                  <img src="../assets/facebook.png" alt="facebook logo" class="figure-img m-0" role="button"
+                    style="max-width: 32px; filter: grayscale(1);">
                 </figure>
               </li>
               <li class="nav-item">
                 <figure class="m-0 p-0">
-                  <img src="../assets/instagram.png" alt="instagram logo" class="figure-img" role="button">
+                  <img src="../assets/instagram.png" alt="instagram logo" class="figure-img m-0" role="button"
+                    style="max-width: 32px; filter: grayscale(1);">
                 </figure>
               </li>
               <li class="nav-item">
                 <figure class="m-0 p-0">
-                  <img src="../assets/whatsapp.png" alt="whatsapp logo" class="figure-img" role="button">
+                  <img src="../assets/whatsapp.png" alt="whatsapp logo" class="figure-img m-0" role="button"
+                    style="max-width: 32px; filter: grayscale(1);">
                 </figure>
               </li>
             </ul>
           </div>
           <div class="col-8 col-sm-4 text-end">
-            <p>AP Desarrollo Web 14 TN</p>
+            <p class="fs-6 m-0">AP Desarrollo Web 14 TN</p>
           </div>
         </div>
       </div>
