@@ -24,13 +24,13 @@
   <header class="p-2">
     <nav class="navbar navbar-expand-sm">
       <div class="container-fluid">
-        <div class="row align-items-center justify-content-between">
+        <div class="row align-items-center justify-content-between w-100">
           <div class="col-6 col-sm-4">
             <figure class="navbar-brand m-0 p-0">
               <img src="./src/assets/amazing_brand.png" alt="Amazing Events brand logo" class="figure-img w-100 m-0 p-0">
             </figure>
           </div>
-          <div class="col-6 text-end">
+          <div class="col-6 col-md-4 text-end">
             <button
               type="button"
               class="navbar-toggler"
@@ -42,7 +42,7 @@
               <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbar">
-              <ul class="navbar-nav d-flex flex-column flex-sm-row flex-nowrap align-items-center justify-content-between">
+              <ul class="navbar-nav d-flex flex-column flex-sm-row flex-nowrap align-items-center justify-content-between w-100">
                 <li class="nav-item">
                   <a href="./index.html" aria-current="page" class="nav-link active">Home</a>
                 </li>
@@ -64,7 +64,69 @@
         </div>
       </div>
     </nav>
+
+    <section id="carousel" class="carousel slide position-relative">
+      <div class="carousel-inner">
+        <figure class="carousel-item active">
+          <img src="./src/assets/optional_banner_1.jpg" class="d-block w-100" alt="An image of a sushi dish">
+        </figure>
+        <figure class="carousel-item">
+          <img src="./src/assets/optional_banner_2.jpg" class="d-block w-100" alt="An image of a theather">
+        </figure>
+        <figure class="carousel-item">
+          <img src="./src/assets/optional_banner_3.jpg" class="d-block w-100" alt="An image of a cathedral inside">
+        </figure>
+        <figure class="carousel-item">
+          <img src="./src/assets/optional_banner_4.jpg" class="d-block w-100" alt="An image of party lights">
+        </figure>
+        <figure class="carousel-item">
+          <img src="./src/assets/optional_banner_5.jpg" class="d-block w-100" alt="An image of a mic">
+        </figure>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+
+      <h1 class="position-absolute top-50 start-50 translate-middle fs-1 text-white">Home</h1>
+    </section>
   </header>
 
+  <main></main>
+
+  <footer class="p-2">
+    <nav class="navbar">
+      <div class="container-fluid">
+        <div class="row align-items-center justify-content-between w-100">
+          <div class="col-2">
+            <ul class="navbar-nav d-flex flex-row flex-nowrap align-items-center justify-content-between">
+              <li class="nav-item">
+                <figure class="m-0 p-0">
+                  <img src="./src/assets/facebook.png" alt="facebook logo" class="figure-img" role="button">
+                </figure>
+              </li>
+              <li class="nav-item">
+                <figure class="m-0 p-0">
+                  <img src="./src/assets/instagram.png" alt="instagram logo" class="figure-img" role="button">
+                </figure>
+              </li>
+              <li class="nav-item">
+                <figure class="m-0 p-0">
+                  <img src="./src/assets/whatsapp.png" alt="whatsapp logo" class="figure-img" role="button">
+                </figure>
+              </li>
+            </ul>
+          </div>
+          <div class="col-8 col-sm-4 text-end">
+            <p>AP Desarrollo Web 14 TN</p>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </footer>
 </body>
 </html>

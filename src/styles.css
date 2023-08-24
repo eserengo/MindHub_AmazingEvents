@@ -1,12 +1,26 @@
-.navbar-nav {
+body {
+  min-width: 200px;
+}
+
+header .navbar-nav {
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
 
+.carousel-inner > .carousel-item > img {
+  width: 100%; 
+  max-height: 320px;
+  object-fit: cover;
+}
+
+footer img {
+  width: 32px;
+}
+
 @media screen and (width > 576px) {
-  .navbar-nav {
+  header .navbar-nav {
     position: static;
     transform: translate(0%, 0%);
   }
