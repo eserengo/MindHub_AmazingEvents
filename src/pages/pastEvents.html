@@ -16,6 +16,8 @@
     integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
     crossorigin="anonymous">
   </script>
+  <script src="../scripts/data.js"></script>
+  <script src="../scripts/pastEvents.js" defer></script>
   <title>Past Events</title>
 </head>
 
@@ -136,69 +138,10 @@
 
     <section class="p-2">
       <div class="container-fluid">
-        <div class="row w-100">
-          <div class="col-12 col-sm-6 col-md-3 my-2">
-            <div class="card" style="min-height: 25rem">
-              <img src="../assets/marathon.jpg" class="card-img-top object-fit-cover" alt="An image of people running a race."
-                style="height: 10rem;">
-              <div class="card-body d-flex flex-column align-items-stretch justify-content-evenly">
-                <h2 class="card-title fs-4 text-center">10K for life</h2>
-                <p class="card-text">Come and exercise, improve your health and lifestyle.</p>
-                <div class="d-flex flex-wrap align-items-center justify-content-between gap-2">
-                  <span class="card-text">Price: 3</span>
-                  <a href="#" class="btn btn-outline-danger px-4" style="margin-top: -8px;">Details</a>
-                </div>
-              </div>
-            </div>
-          </div>
-    
-          <div class="col-12 col-sm-6 col-md-3 my-2">
-            <div class="card" style="min-height: 25rem">
-              <img src="../assets/books.jpg" class="card-img-top object-fit-cover" alt="An image of a bookstore."
-                style="height: 10rem;">
-              <div class="card-body d-flex flex-column align-items-stretch justify-content-evenly">
-                <h2 class="card-title fs-4 text-center">School Book Fair</h2>
-                <p class="card-text">Bring your unused school book and take the one you need.</p>
-                <div class="d-flex flex-wrap align-items-center justify-content-between gap-2">
-                  <span class="card-text">Price: 1</span>
-                  <a href="#" class="btn btn-outline-danger px-4" style="margin-top: -8px;">Details</a>
-                </div>
-              </div>
-            </div>
-          </div>
-    
-          <div class="col-12 col-sm-6 col-md-3 my-2">
-            <div class="card" style="min-height: 25rem">
-              <img src="../assets/food_fair.jpg" class="card-img-top object-fit-cover" alt="An image of several dishes served."
-                style="height: 10rem;">
-              <div class="card-body d-flex flex-column align-items-stretch justify-content-evenly">
-                <h2 class="card-title fs-4 text-center">Festival of the collectivities</h2>
-                <p class="card-text">Enjoy your favorite dishes from different countries in a unique event for the whole
-                  family.</p>
-                <div class="d-flex flex-wrap align-items-center justify-content-between gap-2">
-                  <span class="card-text">Price: 5</span>
-                  <a href="#" class="btn btn-outline-danger px-4" style="margin-top: -8px;">Details</a>
-                </div>
-              </div>
-            </div>
-          </div>
-    
-          <div class="col-12 col-sm-6 col-md-3 my-2">
-            <div class="card" style="min-height: 25rem">
-              <img src="../assets/outing_to_the_museum.jpg" class="card-img-top object-fit-cover" alt="An image of a crowded museum."
-                style="height: 10rem;">
-              <div class="card-body d-flex flex-column align-items-stretch justify-content-evenly">
-                <h2 class="card-title fs-4 text-center">Art Exhibition</h2>
-                <p class="card-text">Let's go to the art museum for an incredible tour to learn about the largest
-                  dinosaurs.</p>
-                <div class="d-flex flex-wrap align-items-center justify-content-between gap-2">
-                  <span class="card-text">Price: 15</span>
-                  <a href="#" class="btn btn-outline-danger px-4" style="margin-top: -8px;">Details</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        
+        <!-- Este es el elemento dentro del cual voy a generar las tarjetas de los eventos de forma dinamica -->
+        <div class="row w-100" id="pastEventsContainer"></div>
+
       </div>
     </section>
   </main>
