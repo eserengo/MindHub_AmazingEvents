@@ -1,4 +1,4 @@
-function createCardsAtPastEvents() {
+function createCardsAtUpcomingEvents() {
   for (let event of data.events) {
     if (event.date > data.currentDate) {
       document.getElementById('upcomingEventsContainer').insertAdjacentHTML(
@@ -21,4 +21,4 @@ function createCardsAtPastEvents() {
   }
 }
 
-createCardsAtPastEvents();
+createCardsAtUpcomingEvents();

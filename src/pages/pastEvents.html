@@ -25,35 +25,35 @@
   <header class="p-2">
     <nav class="navbar navbar-expand-sm bg-body-tertiary">
       <div class="container-fluid">
-        <div class="row align-items-center justify-content-between w-100">
-          <div class="col-6 col-sm-4">
+        <div class="row w-100 g-0 align-items-center justify-content-between">
+          <div class="col-6 col-sm-3 col-lg-2">
             <figure class="navbar-brand m-0 p-0">
               <img src="../assets/amazing_brand.png" alt="Amazing Events brand logo" class="figure-img w-100 m-0 p-0">
             </figure>
           </div>
-          <div class="col-2 col-sm-6 text-end">
-            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar"
+          <div class="col-2 col-sm-8 col-lg-6">
+            <button type="button" class="navbar-toggler border-0" data-bs-toggle="collapse" data-bs-target="#navbar"
               aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbar">
+            <div class="collapse navbar-collapse w-100 justify-content-sm-end" id="navbar">
               <ul
-                class="navbar-nav d-flex flex-column flex-sm-row flex-nowrap align-items-center justify-content-between w-100">
+                class="navbar-nav d-flex flex-column flex-sm-row flex-nowrap align-items-center justify-content-between">
                 <li class="nav-item">
-                  <a href="../../index.html" class="nav-link fs-5">Home</a>
+                  <a href="../../index.html" class="nav-link fs-6">Home</a>
                 </li>
                 <li class="nav-item">
-                  <a href="./upcomingEvents.html" class="nav-link fs-5">Upcoming Events</a>
+                  <a href="./upcomingEvents.html" class="nav-link fs-6">Upcoming Events</a>
                 </li>
                 <li class="nav-item">
-                  <a href="./pastEvents.html" aria-current="page" class="nav-link active fs-5"
+                  <a href="./pastEvents.html" aria-current="page" class="nav-link active fs-6"
                     style="color: rgb(214, 0, 100);">Past Events</a>
                 </li>
                 <li class="nav-item">
-                  <a href="./contact.html" class="nav-link fs-5">Contact</a>
+                  <a href="./contact.html" class="nav-link fs-6">Contact</a>
                 </li>
                 <li class="nav-item">
-                  <a href="./stats.html" class="nav-link fs-5">Stats</a>
+                  <a href="./stats.html" class="nav-link fs-6">Stats</a>
                 </li>
               </ul>
             </div>
@@ -101,7 +101,7 @@
   <main>
     <nav class="navbar">
       <div class="container-fluid">
-        <div class="row w-100 d-flex flex-row align-items-center justify-content-between">
+        <div class="row w-100 g-0 d-flex flex-row align-items-center justify-content-between">
           <div class="col-6 col-sm-8">
             <form class="d-flex flex-row flex-wrap align-items-center gap-4">
               <div class="form-check">
@@ -136,14 +136,12 @@
       </div>
     </nav>
 
-    <section class="p-2">
-      <div class="container-fluid">
-        
-        <!-- Este es el elemento dentro del cual voy a generar las tarjetas de los eventos de forma dinamica -->
-        <div class="row w-100" id="pastEventsContainer"></div>
+    <div class="container-fluid p-2">
+      
+      <!-- Este es el elemento dentro del cual voy a generar las tarjetas de los eventos de forma dinamica -->
+      <div class="row w-100" id="pastEventsContainer"></div>
 
-      </div>
-    </section>
+    </div>
   </main>
 
   <footer class="p-2">
