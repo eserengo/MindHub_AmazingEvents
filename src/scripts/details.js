@@ -1,6 +1,7 @@
-function createDetailsCard() {
+// La siguiente función crea la tarjeta de detalles del evento en la página corrrespondiente.
+(function createDetailsCard() {
   for (let event of data.events) {
-    if (event._id == sessionStorage.getItem("details")) {
+    event._id == sessionStorage.getItem("details") &&
       document.getElementById("detailsContainer").insertAdjacentHTML(
         "afterbegin",
         `<div class="card">
@@ -23,8 +24,5 @@ function createDetailsCard() {
           </div>
         </div>`
       );
-    }
   }
-}
-
-createDetailsCard();
+})();

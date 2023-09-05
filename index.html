@@ -106,14 +106,19 @@
 
             <!-- Este es el elemento dentro del cual voy a generar las categorias de los eventos de forma dinamica -->
             <form class="d-flex flex-column flex-sm-row flex-wrap align-items-sm-start align-items-sm-center gap-1 gap-sm-3"
-              action="#" role="listbox" id="homeCategoriesContainer"></form>
+              action="#">
+              <fieldset id="homeCategoriesContainer">
+                <legend class="fs-6 text-secondary">Filter events by category</legend>
+              </fieldset>
+            </form>
 
           </div>
           
           <div class="col-6 col-md-4">
             <form class="d-flex flex-column flex-sm-row" action="#" role="search">
-              <input class="form-control mb-2 me-sm-2 mb-sm-0" type="search" placeholder="Search events by name" aria-label="Search">
-              <button class="btn btn-outline-danger" type="submit">Search</button>
+              <input class="form-control mb-2 me-sm-2 mb-sm-0" type="search" id="search-input" placeholder="Search events by name"
+                aria-label="Search">
+              <button class="btn btn-outline-danger" type="submit" id="submit-input">Search</button>
             </form>
           </div>
         </div>
