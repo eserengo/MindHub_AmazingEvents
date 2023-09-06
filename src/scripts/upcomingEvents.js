@@ -27,16 +27,21 @@ function handleDetailsClick(event) {
   return sessionStorage.setItem("details", event.target.dataset.details);
 }
 
+// Esta función filtra los eventos de data y devuelve una nueva array con los eventos por venir solamente.
+function upcomingEventsArray() {
+  return data.events.filter(item => item.date > data.currentDate);
+}
+
 // Esta función devuelve un array que utiliza como entrada la función de crear tajetas. El array esta compuesto por los
-// eventos de data que están presentes en el array de filtrado.
-function filteredData() {
-  return data.events.filter(item => filterInput.find(subitem => subitem == item.category) !== undefined);
+// eventos por venir que están presentes en el array de filtrado.
+function filteredData(inputArray) {
+  return inputArray.filter(item => filterInput.find(subitem => subitem == item.category) !== undefined);
 };
 
 // Esta función también devuelve un array que utiliza como entrada la función de crear tajetas, se le especifica un parámetro
 // de entrada que es una array, la cual filtra y normaliza los datos según lo requerido.
-function searchedData(sourceArray) {
-  return sourceArray.filter(item => {
+function searchedData(inputArray) {
+  return inputArray.filter(item => {
     if (item.name.toLowerCase().includes(searchInput[0].toLowerCase())) return item;
   });
 }
@@ -44,7 +49,7 @@ function searchedData(sourceArray) {
 
 // Esta función crea de forma dinámica los checkboxes para filtrar por categoría.
 function createCategoriesCheckboxes() {
-  const categories = new Set(data.events.map(item => item.category));
+  const categories = new Set(upcomingEventsArray().map(item => item.category));
 
   for (let category of categories) {
     document.getElementById("upcomingEventsCategoriesContainer").insertAdjacentHTML(
@@ -59,39 +64,37 @@ function createCategoriesCheckboxes() {
 
 // Esta función crea de forma dinámica las tarjetas de eventos, recibe como argumento un array, o retorna un mensaje amigable 
 // al usuario cuando no hay nada que coincida con la búsqueda que realizó según lo requerido.
-function createEventsCards(sourceArray) {
-  if (!sourceArray.length) {
+function createEventsCards(inputArray) {
+  if (!inputArray.length) {
     document.querySelector(".msg") && document.querySelector(".msg").remove();
     document.getElementById("upcomingEventsCardsContainer").insertAdjacentHTML(
       "beforeend",
-      `<h2 class="msg text-secondary text-center">Sorry, no events were founded.</h2>`
+      `<h2 class="msg text-secondary text-center">Sorry, no events were found.</h2>`
     );
   } else {
     document.querySelector(".msg") && document.querySelector(".msg").remove();
-    sourceArray.map(item => {
-      if (item.date > data.currentDate) {
-        eventsListed++;
-        document.getElementById("upcomingEventsCardsContainer").insertAdjacentHTML(
-          "beforeend",
-          `<div class="card-wrapper col-12 col-sm-6 col-md-4 col-lg-3 my-2">
-            <div class="card" style="min-height: 25rem">
-              <figure class="m-0">
-                <img src="${item.image}" alt="${item.category}" class="card-img-top object-fit-cover" style="height: 10rem;">
-              </figure>
-              <div class="card-body d-flex flex-column align-items-stretch justify-content-between">
-                <h2 class="card-title fs-4 text-center">${item.name}</h2>
-                <p class="card-text">${item.description}</p>
-                <div class="d-flex flex-wrap align-items-center justify-content-between gap-2">
-                  <span class="card-text">Price: ${item.price}</span>
-                  <a href="../pages/details.html?id=${item._id}" class="details-link btn btn-outline-danger px-4" data-details="${item._id}">
-                    Details
-                  </a>
-                </div>
+    inputArray.map(item => {
+      eventsListed++;
+      document.getElementById("upcomingEventsCardsContainer").insertAdjacentHTML(
+        "beforeend",
+        `<div class="card-wrapper col-12 col-sm-6 col-md-4 col-lg-3 my-2">
+          <div class="card" style="min-height: 25rem">
+            <figure class="m-0">
+              <img src="${item.image}" alt="${item.category}" class="card-img-top object-fit-cover" style="height: 10rem;">
+            </figure>
+            <div class="card-body d-flex flex-column align-items-stretch justify-content-between">
+              <h2 class="card-title fs-4 text-center">${item.name}</h2>
+              <p class="card-text">${item.description}</p>
+              <div class="d-flex flex-wrap align-items-center justify-content-between gap-2">
+                <span class="card-text">Price: ${item.price}</span>
+                <a href="../pages/details.html?id=${item._id}" class="details-link btn btn-outline-danger px-4" data-details="${item._id}">
+                  Details
+                </a>
               </div>
             </div>
-          </div>`
-        );
-      }
+          </div>
+        </div>`
+      );
     })
   }
 
@@ -109,13 +112,13 @@ function updateCards() {
   document.querySelector(".events-listed") && document.querySelector(".events-listed").remove();
 
   if (filterInput.length && !searchInput.length) {
-    createEventsCards(filteredData());
+    createEventsCards(filteredData(upcomingEventsArray()));
   } else if (!filterInput.length && searchInput.length) {
-    createEventsCards(searchedData(data.events));
+    createEventsCards(searchedData(upcomingEventsArray()));
   } else if (filterInput.length && searchInput.length) {
-    createEventsCards(searchedData(filteredData()));
+    createEventsCards(searchedData(filteredData(upcomingEventsArray())));
   } else {
-    createEventsCards(data.events);
+    createEventsCards(upcomingEventsArray());
   }
 
   document.querySelector("main").insertAdjacentHTML(
@@ -137,6 +140,17 @@ document.getElementById("submit-input").addEventListener(
     searchInput = [];
     searchInput.push(document.getElementById("search-input").value);
     setURLSearchParams("search", document.getElementById("search-input").value, "set");
+    updateCards();
+  }
+)
+
+// Evento para borrar el input en la barra de búsqueda y datos asociados.
+document.getElementById("clear-btn").addEventListener(
+  "click",
+  () => {
+    document.getElementById("search-input").value = "";
+    searchInput = [];
+    setURLSearchParams("search", null, "set");
     updateCards();
   }
 )

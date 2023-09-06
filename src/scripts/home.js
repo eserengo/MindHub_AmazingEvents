@@ -35,8 +35,8 @@ function filteredData() {
 
 // Esta función también devuelve un array que utiliza como entrada la función de crear tajetas, se le especifica un parámetro
 // de entrada que es una array, la cual filtra y normaliza los datos según lo requerido.
-function searchedData(sourceArray) {
-  return sourceArray.filter(item => {
+function searchedData(inputArray) {
+  return inputArray.filter(item => {
     if (item.name.toLowerCase().includes(searchInput[0].toLowerCase())) return item;
   });
 }
@@ -59,17 +59,16 @@ function createCategoriesCheckboxes() {
 
 // Esta función crea de forma dinámica las tarjetas de eventos, recibe como argumento un array, o retorna un mensaje amigable 
 // al usuario cuando no hay nada que coincida con la búsqueda que realizó según lo requerido.
-function createEventsCards(sourceArray) {
-  if (!sourceArray.length) {
+function createEventsCards(inputArray) {
+  if (!inputArray.length) {
     document.querySelector(".msg") && document.querySelector(".msg").remove();
     document.getElementById("homeCardsContainer").insertAdjacentHTML(
       "beforeend",
-      `<h2 class="msg text-secondary text-center">Sorry, no events were founded.</h2>`
+      `<h2 class="msg text-secondary text-center">Sorry, no events were found.</h2>`
     );
   } else {
     document.querySelector(".msg") && document.querySelector(".msg").remove();
-    sourceArray.map(item => {
-      // --> insertar condicional de fecha aqui - ojo con los containers!!
+    inputArray.map(item => {
       eventsListed++;
       document.getElementById("homeCardsContainer").insertAdjacentHTML(
         "beforeend",
@@ -136,6 +135,17 @@ document.getElementById("submit-input").addEventListener(
     searchInput = [];
     searchInput.push(document.getElementById("search-input").value);
     setURLSearchParams("search", document.getElementById("search-input").value, "set");
+    updateCards();
+  }
+)
+
+// Evento para borrar el input en la barra de búsqueda y datos asociados.
+document.getElementById("clear-btn").addEventListener(
+  "click",
+  () => {
+    document.getElementById("search-input").value = "";
+    searchInput = [];
+    setURLSearchParams("search", null, "set");
     updateCards();
   }
 )
