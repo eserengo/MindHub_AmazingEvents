@@ -1,5 +1,9 @@
 // --> comienzo del script
 
+import data from "./fetchData.js";
+
+if (data.events) {
+
 // Variables para manejar los inputs de filtrado, búsqueda y cantidad de tarjetas de eventos creadas.
 let filterInput = [];
 let searchInput = [];
@@ -9,6 +13,7 @@ let eventsListed = 0;
 // filtrado por categorías como a la búsqueda por nombre.
 function setURLSearchParams(key, value, action) {
   const url = new URL(window.location.href);
+  
   if (action == "delete") {
     const entries = url.searchParams.getAll(key).filter(item => item !== value);
     url.searchParams.delete(key);
@@ -19,12 +24,8 @@ function setURLSearchParams(key, value, action) {
   } else {
     url.searchParams.append(key, value);
   }
-  window.history.pushState({ path: url.href }, "", url.href);
-}
 
-// Esta función establece el parámetro para que la página de details pueda generarse, usando el storage de sesión.
-function handleDetailsClick(event) {
-  return sessionStorage.setItem("details", event.target.dataset.details);
+  return window.history.pushState({ path: url.href }, "", url.href);
 }
 
 // Esta función filtra los eventos de data y devuelve una nueva array con los eventos por venir solamente.
@@ -46,20 +47,19 @@ function searchedData(inputArray) {
   });
 }
 
-
 // Esta función crea de forma dinámica los checkboxes para filtrar por categoría.
 function createCategoriesCheckboxes() {
-  const categories = new Set(upcomingEventsArray().map(item => item.category));
+  const categories = Array.from(new Set(upcomingEventsArray().map(item => item.category)));
 
-  for (let category of categories) {
+  return categories.map(item => {
     document.getElementById("upcomingEventsCategoriesContainer").insertAdjacentHTML(
       "beforeend",
       `<div class="form-check form-check-inline">
-        <input type="checkbox" class="form-check-input" id="${category}" name="categories" value="${category}" role="button">
-        <label for="${category}" class="form-check-label">${category}</label>
+        <input type="checkbox" class="form-check-input" id="${item}" name="categories" value="${item}" role="button">
+        <label for="${item}" class="form-check-label">${item}</label>
       </div>`
     );
-  }
+  })
 }
 
 // Esta función crea de forma dinámica las tarjetas de eventos, recibe como argumento un array, o retorna un mensaje amigable 
@@ -87,7 +87,7 @@ function createEventsCards(inputArray) {
               <p class="card-text">${item.description}</p>
               <div class="d-flex flex-wrap align-items-center justify-content-between gap-2">
                 <span class="card-text">Price: ${item.price}</span>
-                <a href="../pages/details.html?id=${item._id}" class="details-link btn btn-outline-danger px-4" data-details="${item._id}">
+                <a href="../pages/details.html?id=${item._id}" class="btn btn-outline-danger px-4" data-details="${item._id}">
                   Details
                 </a>
               </div>
@@ -97,10 +97,6 @@ function createEventsCards(inputArray) {
       );
     })
   }
-
-  document.querySelectorAll(".details-link").forEach(item => {
-    item.addEventListener("click", (event) => handleDetailsClick(event));
-  })
 }
 
 // Esta función es la encargada de llamar a la función de creación de tarjetas dependiendo de la interacción del usuario:
@@ -167,5 +163,15 @@ document.querySelector(".form-check-input") &&
       updateCards();
     });
   })
+
+  document.getElementById("upcomingEventsNavBar").classList.remove("d-none");
+
+// Si hay algun fallo en la peticion a la API, solo se imprime un mensaje.
+} else {
+  document.getElementById("upcomingEventsCardsContainer").insertAdjacentHTML(
+    "beforeend",
+    `<h2 class="text-center">${Object.keys(data)}: ${Object.values(data)}</h2>`
+  )
+}
 
   // --> fin del script

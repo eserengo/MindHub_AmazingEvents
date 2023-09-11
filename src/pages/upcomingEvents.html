@@ -16,8 +16,8 @@
     integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
     crossorigin="anonymous">
   </script>
-  <script src="../scripts/data.js"></script>
-  <script src="../scripts/upcomingEvents.js" defer></script>
+  <script src="../scripts/fetchData.js" type="module" async></script>
+  <script src="../scripts/upcomingEvents.js" type="module" defer></script>
   <title>Upcoming Events</title>
 </head>
 
@@ -99,7 +99,7 @@
   </header>
 
   <main>
-    <nav class="navbar">
+    <nav class="navbar d-none" id="upcomingEventsNavBar">
       <div class="container-fluid">
         <div class="row w-100 d-flex flex-row align-items-center justify-content-between">
           <div class="col-6 col-md-8">

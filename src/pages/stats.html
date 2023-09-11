@@ -16,6 +16,9 @@
     integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
     crossorigin="anonymous">
   </script>
+  <script src="../scripts/fetchData.js" type="module" async></script>
+  <script src="../scripts/stats.js" type="module" defer></script>
+  </script>
   <title>Stats</title>
 </head>
 
@@ -97,89 +100,10 @@
   </header>
 
   <main>
-    <div class="container-fluid">
-      <div class="row w-100">
-        <div class="col table-responsive">
-          <table class="table table-bordered shadow-sm">
-            <thead>
-              <tr class="table-secondary">
-                <th colspan="3" scope="row">Event Statistics</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Events with highest % of assistance</td>
-                <td>Events with lowest % of assistance</td>
-                <td>Events with larger capacity</td>
-              </tr>
-              <tr>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
 
-      <div class="row w-100">
-        <div class="col table-responsive">
-          <table class="table table-bordered shadow-sm">
-            <thead>
-              <tr class="table-secondary">
-                <th colspan="3" scope="row">Upcoming Events statistics by category</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Categories</td>
-                <td>Revenues</td>
-                <td>Percentage of assistance</td>
-              </tr>
-              <tr>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-              </tr>
-              <tr>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-
-      <div class="row w-100">
-        <div class="col table-responsive">
-          <table class="table table-bordered shadow-sm">
-            <thead>
-              <tr class="table-secondary">
-                <th colspan="3" scope="row">Past Events statistics by category</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Categories</td>
-                <td>Revenues</td>
-                <td>Percentage of assistance</td>
-              </tr>
-              <tr>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-              </tr>
-              <tr>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </div>
+    <!-- Este es el elemento dentro del cual voy a generar las tablas de forma dinamica -->
+    <div class="container-fluid" id="tablesContainer"></div>
+    
   </main>
 
   <footer class="p-2">
