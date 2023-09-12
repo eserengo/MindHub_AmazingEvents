@@ -1,3 +1,5 @@
+// --> comienzo del script
+
 const fetchData = async () => {
   try {
     const res = await fetch("https://mindhub-xj03.onrender.com/api/amazing");
@@ -14,3 +16,5 @@ const fetchData = async () => {
 const data = await fetchData();
 
 export default data;
+
+// --> fin del script

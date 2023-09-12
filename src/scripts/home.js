@@ -62,7 +62,7 @@ if (data.events) {
     if (!inputArray.length) {
       document.querySelector(".msg") && document.querySelector(".msg").remove();
       document.getElementById("homeCardsContainer").insertAdjacentHTML(
-        "beforeend",
+        "afterbegin",
         `<h2 class="msg text-secondary text-center">Sorry, no events were found.</h2>`
       );
     } else {
@@ -164,8 +164,8 @@ if (data.events) {
 } else {
   document.getElementById("homeCardsContainer").insertAdjacentHTML(
     "beforeend",
-    `<h2 class="text-center">${Object.keys(data)}: ${Object.values(data)}</h2>`
+    `<h2 class="text-center text-danger">${Object.keys(data)}: ${Object.values(data)}</h2>`
   )
 }
 
-  // --> fin del script
+// --> fin del script

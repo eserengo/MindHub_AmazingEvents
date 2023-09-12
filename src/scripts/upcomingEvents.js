@@ -68,7 +68,7 @@ function createEventsCards(inputArray) {
   if (!inputArray.length) {
     document.querySelector(".msg") && document.querySelector(".msg").remove();
     document.getElementById("upcomingEventsCardsContainer").insertAdjacentHTML(
-      "beforeend",
+      "afterbegin",
       `<h2 class="msg text-secondary text-center">Sorry, no events were found.</h2>`
     );
   } else {
@@ -170,7 +170,7 @@ document.querySelector(".form-check-input") &&
 } else {
   document.getElementById("upcomingEventsCardsContainer").insertAdjacentHTML(
     "beforeend",
-    `<h2 class="text-center">${Object.keys(data)}: ${Object.values(data)}</h2>`
+    `<h2 class="text-center text-danger">${Object.keys(data)}: ${Object.values(data)}</h2>`
   )
 }
 

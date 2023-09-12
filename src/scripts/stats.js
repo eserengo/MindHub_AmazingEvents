@@ -21,10 +21,10 @@ if (data.events) {
     // Crea una nueva array con las categorias sin repetir.
     const categories = Array.from(new Set(inputArray.map(item => item.category)));
 
-    // Bucle sobre las categorias.
+    // El resto de la funcion corre dentro de un bucle sobre las categorias.
     categories.map(item => {
 
-      // Devuelve los eventos filtrados por categorias.
+      // Devuelve los eventos filtrados por categorias, con esta array trabajamos en las proximas funciones.
       const sortByCategory = inputArray.filter(event => event.category == item);
 
       // Reduce las ganancias por categoria de evento a un valor.
@@ -33,7 +33,7 @@ if (data.events) {
           (acc, event) => acc + event.price * (event.assistance ? event.assistance : event.estimate), 0
       );
 
-      // Reduce el porcentaje de asistencia por categoria de evento a un valor.
+      // Reduce el porcentaje de asistencia por categoria al promedio.
       const percentageOfAssistance = (sortByCategory
         .reduce(
           (acc, event) => acc + ((event.assistance ? event.assistance : event.estimate) / event.capacity) * 100, 0
@@ -218,7 +218,7 @@ if (data.events) {
 } else {
   document.getElementById("tablesContainer").insertAdjacentHTML(
     "beforeend",
-    `<h2 class="text-center">${Object.keys(data)}: ${Object.values(data)}</h2>`
+    `<h2 class="text-center text-danger">${Object.keys(data)}: ${Object.values(data)}</h2>`
   )
 }
 

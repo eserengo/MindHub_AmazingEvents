@@ -2,11 +2,13 @@
 
 import data from "./fetchData.js";
 
+if (data.events) {
+
 // Trabajamos con location.search
 const params = new URLSearchParams(location.search);
 
 // La siguiente función crea la tarjeta de detalles del evento en la página corrrespondiente.
-(function createDetailsCard() {
+function createDetailsCard() {
   data.events.map(item => {
     item._id == params.get("id") &&
       document.getElementById("detailsContainer").insertAdjacentHTML(
@@ -33,6 +35,16 @@ const params = new URLSearchParams(location.search);
       );
     }
   )
-})();
+  };
+
+  createDetailsCard();
+  
+// Si hay algun fallo en la peticion a la API, solo se imprime un mensaje.
+} else {
+  document.getElementById("detailsContainer").insertAdjacentHTML(
+    "beforeend",
+    `<h2 class="text-center text-danger">${Object.keys(data)}: ${Object.values(data)}</h2>`
+  )
+}
 
 // --> fin del script
